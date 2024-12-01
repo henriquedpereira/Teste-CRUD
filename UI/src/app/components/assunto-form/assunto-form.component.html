@@ -1,0 +1,10 @@
+
+<form [formGroup]="assuntoForm" (ngSubmit)="onSubmit()">
+  <input id="codAs" formControlName="codAs" type="hidden" />
+  <div>
+    <label for="descricao">Descricao:</label>
+    <input id="descricao" formControlName="descricao" type="text" />
+  </div>
+  <button type="submit">Gravar</button>
+</form>
+

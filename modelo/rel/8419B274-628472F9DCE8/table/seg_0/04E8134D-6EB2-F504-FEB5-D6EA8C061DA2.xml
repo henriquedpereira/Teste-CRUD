@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="04E8134D-6EB2-F504-FEB5-D6EA8C061DA2" name="Forma_Pag">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:27:21 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CodForm" id="2A73EEA8-29F1-91C8-D2BB-5CEE0CAEA83B">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:27:58 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descricao" id="ACC3643F-FD96-E5D5-C07F-63FF868F4BC3">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:27:58 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CFA5092B-EA77-1121-75E7-DD307E747B87" name="Forma_Pag_PK">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:27:58 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A73EEA8-29F1-91C8-D2BB-5CEE0CAEA83B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

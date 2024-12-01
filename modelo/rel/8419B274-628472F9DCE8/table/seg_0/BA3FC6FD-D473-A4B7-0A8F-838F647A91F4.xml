@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BA3FC6FD-D473-A4B7-0A8F-838F647A91F4" name="Livro_Autor">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:24:03 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Autor_CodAu" id="4B39724F-3350-C477-B685-345CC76AE817">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:24:14 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="967574B7-9604-E1A8-DFA5-E7A8DFA55932" referredColumn="65E32F39-B63F-086A-5127-660100DAA41A"/>
+</associations>
+</Column>
+<Column name="Livro_Codl" id="7D647D3C-9970-27E5-AB96-C5E362048FC8">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:25:08 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF386F8E-C222-89A1-3AE3-D7C3C6AC13C7" referredColumn="76B7FBE3-68FD-DFCC-53C2-58D49C9EB908"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3A5028E7-BCC0-EA3D-083B-0A455745991A" name="Autor_CodAu">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:24:14 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B39724F-3350-C477-B685-345CC76AE817"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="57056628-3E14-488B-817B-7D125B4E8E4C" name="Livro_Codl">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:25:08 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7D647D3C-9970-27E5-AB96-C5E362048FC8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

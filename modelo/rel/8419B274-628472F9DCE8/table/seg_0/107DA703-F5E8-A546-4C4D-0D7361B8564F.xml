@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="107DA703-F5E8-A546-4C4D-0D7361B8564F" name="Livro_Forma_Pag">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:28:23 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Livro_Codl" id="2EA25EB6-0774-0533-67DE-E41CCB8B7F54">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:28:51 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="253B60E5-E6BC-A7E2-2513-C22417942D9D" referredColumn="76B7FBE3-68FD-DFCC-53C2-58D49C9EB908"/>
+</associations>
+</Column>
+<Column name="Forma_Pag_CodForm" id="414C27B5-EB35-CCDC-D73E-2D7998C5D809">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:29:39 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C5AC73FD-1EB1-1F3F-2C65-57F4A2BD9141" referredColumn="2A73EEA8-29F1-91C8-D2BB-5CEE0CAEA83B"/>
+</associations>
+</Column>
+<Column name="Valor" id="B42617F4-BF6F-160D-3883-D793BE40FB3C">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:32:22 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT044</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<ownDataTypeParameters>,10,4</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C84F1FBE-B80D-D255-6006-C9F3CFB46A0A" name="Livro_Codlv1">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:28:51 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2EA25EB6-0774-0533-67DE-E41CCB8B7F54"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="94DFD44F-5747-3699-6E63-6F6F56B5DDF3" name="Forma_Pagamento_CodForm">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:29:39 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="414C27B5-EB35-CCDC-D73E-2D7998C5D809"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

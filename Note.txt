@@ -1,0 +1,89 @@
+FluentValidation
+validar os modelos 
+
+
+--Criar component
+ng generate component components/assunto-list
+
+
+   
+--Criar base de dados   
+sqllocaldb create "Teste"
+
+(localdb)\Teste
+
+
+--CRIACAO DAS TABELAS --------------------------------------------
+
+CREATE TABLE Autor (
+    CodAu INT NOT NULL,
+    Nome NVARCHAR(40)
+);
+
+ALTER TABLE Autor ADD CONSTRAINT Autor_PK PRIMARY KEY (CodAu);
+
+CREATE TABLE Livro (
+    CodL INT NOT NULL,
+    Titulo NVARCHAR(40),
+    Editora NVARCHAR(40),
+    Edicao INT NOT NULL,
+    Publicacao NVARCHAR(4)
+);
+
+ALTER TABLE Livro ADD CONSTRAINT Livro_PK PRIMARY KEY (CodL);
+
+CREATE TABLE Assunto (
+    CodAs INT NOT NULL,
+    Descricao NVARCHAR(20)
+);
+
+ALTER TABLE Assunto ADD CONSTRAINT Assunto_PK PRIMARY KEY (CodAs);
+
+CREATE TABLE FormaPag (
+    CodForm INT NOT NULL,
+    Descricao NVARCHAR(20)
+);
+
+ALTER TABLE FormaPag ADD CONSTRAINT FormaPag_PK PRIMARY KEY (CodForm);
+
+CREATE TABLE LivroAutor (
+    AutorCodAu INT NOT NULL,
+    LivroCodL INT NOT NULL
+);
+
+ALTER TABLE LivroAutor
+    ADD CONSTRAINT FK_AutorCodAu FOREIGN KEY (AutorCodAu)
+        REFERENCES Autor (CodAu);
+
+ALTER TABLE LivroAutor
+    ADD CONSTRAINT FK_LivroCodL FOREIGN KEY (LivroCodL)
+        REFERENCES Livro (CodL);
+
+CREATE TABLE LivroFormaPag (
+    LivroCodL INT NOT NULL,
+    FormaPagCodForm INT NOT NULL,
+    Valor DECIMAL(10, 4) NOT NULL
+);
+
+ALTER TABLE LivroFormaPag
+    ADD CONSTRAINT FK_FormaPagCodForm FOREIGN KEY (FormaPagCodForm)
+        REFERENCES FormaPag (CodForm);
+
+ALTER TABLE LivroFormaPag
+    ADD CONSTRAINT FK_LivroCodLV1 FOREIGN KEY (LivroCodL)
+        REFERENCES Livro (CodL);
+
+CREATE TABLE LivroAssunto (
+    LivroCodL INT NOT NULL,
+    AssuntoCodAs INT NOT NULL
+);
+
+ALTER TABLE LivroAssunto
+    ADD CONSTRAINT FK_AssuntoCodAs FOREIGN KEY (AssuntoCodAs)
+        REFERENCES Assunto (CodAs);
+
+ALTER TABLE LivroAssunto
+    ADD CONSTRAINT FK_LivroCodLV2 FOREIGN KEY (LivroCodL)
+        REFERENCES Livro (CodL);
+		
+--CRIACAO DAS TABELAS --------------------------------------------

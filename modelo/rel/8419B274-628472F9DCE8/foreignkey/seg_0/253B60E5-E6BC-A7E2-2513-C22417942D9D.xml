@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="253B60E5-E6BC-A7E2-2513-C22417942D9D" containerWithKeyObject="107DA703-F5E8-A546-4C4D-0D7361B8564F" localFKIndex="C84F1FBE-B80D-D255-6006-C9F3CFB46A0A" name="Livro_Codlv1">
+<createdBy>henri</createdBy>
+<createdTime>2024-11-29 18:28:51 UTC</createdTime>
+<ownerDesignName>modelo</ownerDesignName>
+<referredTableLongName>Livro</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>70C14B73-A365-1C6F-2FD9-786397B5FF68</referredTableID>
+<keyObject>E42D0EC1-705D-2E03-85BB-FE932B44A564</keyObject>
+<referredKeyID>E42D0EC1-705D-2E03-85BB-FE932B44A564</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Codl</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
