@@ -1,5 +1,7 @@
 FluentValidation
-validar os modelos 
+	validar os modelos 
+
+Testes usando Moq e NUnit
 
 --CRIAR COMPONENTS ANGULAR --------------------------------------------  
 ng generate component components/assunto-list --standalone
@@ -100,3 +102,33 @@ ALTER TABLE LivroAssunto
 		
 --CRIACAO DAS TABELAS --------------------------------------------
 
+
+
+--CRIADA DA VIEW --------------------------------------------
+CREATE VIEW vw_livro AS
+SELECT 
+    l.CodL,
+    l.Titulo,
+    l.Editora,
+    l.Edicao,
+    l.AnoPublicacao,
+    STRING_AGG(a.Descricao, ',') AS Assuntos,
+    STRING_AGG(au.Nome, ', ') AS Autores,
+    STRING_AGG(CONCAT(fp.Descricao, ' (R$', FORMAT(lf.Valor, 'N2'), ')'), ', ') AS FormasPagamento
+FROM 
+    Livro l
+LEFT JOIN 
+    LivroAssunto la ON l.CodL = la.LivroCodL
+LEFT JOIN 
+    Assunto a ON la.AssuntoCodAs = a.CodAs
+LEFT JOIN 
+    LivroAutor la2 ON l.CodL = la2.LivroCodL
+LEFT JOIN 
+    Autor au ON la2.AutorCodAu = au.CodAu
+LEFT JOIN 
+    LivroFormaPag lf ON l.CodL = lf.LivroCodL
+LEFT JOIN 
+    FormaPag fp ON lf.FormaPagCodForm = fp.CodForm
+GROUP BY 
+    l.CodL, l.Titulo, l.Editora, l.Edicao, l.AnoPublicacao;
+--CRIADA DA VIEW --------------------------------------------
