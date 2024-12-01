@@ -71,61 +71,7 @@ namespace Api.Controllers
                 return BadRequest("Ocorreu um erro, verifique com um administrador.");
             }
             return Ok(new { message = "Item removido com sucesso." });
-        }
-
-        [Route("report")]
-        [HttpGet]
-        [ProducesResponseType(typeof(List<Assunto>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<List<Assunto>>> Report()
-        {
-            try
-            {
-                var list = await _assuntoRepository.ListarTodosAsync();
-                if (list is null)
-                    return NotFound();
-
-                var webReport = new WebReport();
-
-                var caminho = Path.Combine(_webHostEnvironment.ContentRootPath,
-                    "reports", "assuntoReport.frx");
-                webReport.Report.Load(caminho);
-
-                GenerateDataTableReport(list.ToList(), webReport);
-
-                webReport.Report.Prepare();
-
-                using MemoryStream stream = new MemoryStream();
-
-                webReport.Report.Export(new PDFSimpleExport(), stream);
-
-                stream.Flush();
-                byte[] arrayReport = stream.ToArray();
-
-                return File(arrayReport, "application/zip", "AssuntosReport.pdf");
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        private void GenerateDataTableReport(List<Assunto> itens, WebReport webReport)
-        {
-            var listDataTable = new DataTable();
-            listDataTable.Columns.Add("CodAs", typeof(int));
-            listDataTable.Columns.Add("Descricao", typeof(string));
-
-            foreach (var item in itens)
-            {
-                listDataTable.Rows.Add(item.CodAs,
-                               item.Descricao);
-            }
-            webReport.Report.RegisterData(listDataTable, "Assuntos");
-        }
-
+        }  
 
     }
 }
