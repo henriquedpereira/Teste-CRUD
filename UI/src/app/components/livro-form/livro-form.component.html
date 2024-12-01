@@ -1,0 +1,63 @@
+<h1 class="h3 mb-4 text-gray-800">
+  {{ livroForm.get('codL')?.value === 0 ? 'Adicionar Livro' : 'Editar Livro' }}
+</h1>
+
+<form [formGroup]="livroForm" (ngSubmit)="onSubmit()">
+  <input id="codL" formControlName="codL" type="hidden" />
+
+  <div class="row">
+    <div class="form-group col-3">
+      <label for="titulo">Titulo:</label>
+      <input id="titulo" class="form-control form-control-user" formControlName="titulo" type="text" />
+    </div>
+    <div class="form-group col-3">
+      <label for="editora">Editora:</label>
+      <input id="editora" class="form-control form-control-user" formControlName="editora" type="text" />
+    </div>
+    <div class="form-group col-3">
+      <label for="edicao">Edicao:</label>
+      <input id="edicao" class="form-control form-control-user" formControlName="edicao" type="text" />
+    </div>
+    <div class="form-group col-3">
+      <label for="anoPublicacao">Ano de Publicacao:</label>
+      <input id="anoPublicacao" class="form-control form-control-user" formControlName="anoPublicacao" type="text" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-4">
+      <label>Assuntos:</label>
+      <div formArrayName="listaAssuntos">
+        <div *ngFor="let assunto of listaAssuntos.controls; let i = index">
+          <input type="checkbox" [checked]="assunto.value.selected" (change)="onAssuntoChange($event, i)" />
+          {{ assunto.value.text }}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-4">
+      <label>Autores:</label>
+      <div formArrayName="listaAutores">
+        <div *ngFor="let autor of listaAutores.controls; let i = index">
+          <input type="checkbox" [checked]="autor.value.selected" (change)="onAutoresChange($event, i)" />
+          {{ autor.value.text }}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-4">
+      <label>Formas de Pagamento:</label>
+      <div formArrayName="listaFormasPag">
+        <div *ngFor="let formaPag of listaFormasPag.controls; let i = index" [formGroupName]="i">
+          <input type="checkbox" formControlName="selected" (change)="onFormaPagChange($event, i)" />
+          {{ formaPag.get('text')?.value }}
+          <div *ngIf="formaPag.get('selected')?.value">
+            <input type="number" formControlName="value2" class="form-control form-control-user" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary mt-4" type="submit">Gravar</button>
+</form>

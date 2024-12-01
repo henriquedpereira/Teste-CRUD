@@ -1,10 +1,13 @@
+<h1 class="h3 mb-4 text-gray-800">
+  {{ assuntoForm.get('codAs')?.value === 0 ? 'Adicionar Assunto' : 'Editar Assunto' }}
+</h1>
 
 <form [formGroup]="assuntoForm" (ngSubmit)="onSubmit()">
   <input id="codAs" formControlName="codAs" type="hidden" />
-  <div>
-    <label for="descricao">Descricao:</label>
-    <input id="descricao" formControlName="descricao" type="text" />
-  </div>
-  <button type="submit">Gravar</button>
-</form>
 
+  <div class="form-group">
+    <label for="descricao">Descrição:</label>
+    <input id="descricao" class="form-control form-control-user" formControlName="descricao" type="text" />
+  </div>
+  <button class="btn btn-primary mt-4" type="submit">Gravar</button>
+</form>

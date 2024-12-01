@@ -5,9 +5,10 @@ namespace Core.Interfaces.Repository
 {
     public interface IAssuntoRepository
     {
-        Task Criar(Assunto item);
-        Task Atualizar(Assunto item);
-        Task<Assunto> Busca(decimal id);
-        Task<IEnumerable<Assunto>> ListarTodos();
+        Task CriarAsync(Assunto item);
+        Task RemoverAsync(decimal id);
+        Task AtualizarAsync(Assunto item);
+        Task<Assunto> BuscaAsync(decimal id);
+        Task<IEnumerable<Assunto>> ListarTodosAsync();
     }
 }

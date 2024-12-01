@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/01/2024 13:16:19" ReportInfo.Modified="12/01/2024 16:58:57" ReportInfo.CreatorVersion="2025.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqJUrEa/KIcQqhhcfnlqC6PIHxSedxxobzVDBAmhFEKbHqz/ti42e315UBcKHdCTOiPu3pnwf1MBzayHZyynKVqO3ltkrc40hXqZDvCD+csdvcDHS4br68btryNRGXm6lvtc7HOYe+Mkr/VJDxvjHq+i9Af/+C3DlxxqjpEX0AlVFWfZLaZt4mlPxz1DcAQhUs">
+      <TableDataSource Name="Vw_Livro" DataType="System.Int32" Enabled="true" TableName="Vw_Livro">
+        <Column Name="CodL" DataType="System.Int32"/>
+        <Column Name="Titulo" DataType="System.String"/>
+        <Column Name="Editora" DataType="System.String"/>
+        <Column Name="Edicao" DataType="System.Int32"/>
+        <Column Name="AnoPublicacao" DataType="System.String"/>
+        <Column Name="Assuntos" DataType="System.String"/>
+        <Column Name="Autores" DataType="System.String"/>
+        <Column Name="FormasPagamento" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" RawPaperSize="9" Watermark.Font="Arial, 60pt" LastPageSource="15" FirstPageSource="15">
+    <ReportTitleBand Name="ReportTitle1" Width="1047.06" Height="85.05">
+      <TextObject Name="Text1" Left="274.05" Top="9.45" Width="387.45" Height="56.7" Border.Lines="All" Text="Relatório de Livros" HorzAlign="Center" VertAlign="Center" Font="Arial, 26pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="89.05" Width="1047.06" Height="18.9">
+      <TextObject Name="Text4" Left="56.7" Width="94.5" Height="18.9" Border.Lines="All" Text="Titulo" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text6" Width="56.7" Height="18.9" Border.Lines="All" Text="Cod" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="151.2" Width="94.5" Height="18.9" Border.Lines="All" Text="Editora" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text10" Left="245.7" Width="75.6" Height="18.9" Border.Lines="All" Text="Edição" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text12" Left="321.3" Width="94.5" Height="18.9" Border.Lines="All" Text="Ano publicação" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text2" Left="557.55" Width="170.1" Height="18.9" Border.Lines="All" Text="Autores" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text16" Left="727.65" Width="311.85" Height="18.9" Border.Lines="All" Text="Formas pagamento" HorzAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text17" Left="415.8" Width="141.75" Height="18.9" Border.Lines="All" Text="Assuntos" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="111.95" Width="1047.06" Height="321.3" DataSource="Vw_Livro">
+      <TextObject Name="Text3" Left="56.7" Width="94.5" Height="66.15" Border.Lines="All" Text="[Vw_Livro.Titulo]" HorzAlign="Justify" Font="Arial, 8pt"/>
+      <TextObject Name="Text5" Width="56.7" Height="66.15" Border.Lines="All" Text="[Vw_Livro.CodL]" HorzAlign="Justify" Font="Arial, 8pt"/>
+      <TextObject Name="Text7" Left="151.2" Width="94.5" Height="66.15" Border.Lines="All" Text="[Vw_Livro.Editora]" HorzAlign="Justify" Font="Arial, 8pt"/>
+      <TextObject Name="Text9" Left="245.7" Width="75.6" Height="66.15" Border.Lines="All" Text="[Vw_Livro.Edicao]" HorzAlign="Justify" Font="Arial, 8pt"/>
+      <TextObject Name="Text11" Left="321.3" Width="94.5" Height="66.15" Border.Lines="All" Text="[Vw_Livro.AnoPublicacao]" HorzAlign="Justify" Font="Arial, 8pt"/>
+      <TextObject Name="Text13" Left="415.8" Width="141.75" Height="66.15" Border.Lines="All" Text="[Vw_Livro.Assuntos]" HorzAlign="Justify" Font="Arial, 8pt"/>
+      <TextObject Name="Text14" Left="557.55" Width="170.1" Height="66.15" Border.Lines="All" Text="[Vw_Livro.Autores]" HorzAlign="Justify" Font="Arial, 8pt"/>
+      <TextObject Name="Text15" Left="727.65" Width="311.85" Height="66.15" Border.Lines="All" Text="[Vw_Livro.FormasPagamento]" HorzAlign="Justify" Font="Arial, 8pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="437.25" Width="1047.06" Height="28.35"/>
+  </ReportPage>
+</Report>

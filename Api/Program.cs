@@ -8,16 +8,19 @@ using Infrastructure;
 using DotNet.DynamicInjector.Models;
 using System.Data;
 using DotNet.DynamicInjector;
+using FastReport.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddFastReport();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddValidatorsFromAssemblyContaining<AssuntoValidator>();
 
 builder.Services.AddScoped<DataContext>();
+
+FastReport.Utils.RegisteredObjects.AddConnection(typeof(MsSqlDataConnection));
 
 builder.Services.AddCors(options =>
 {
@@ -31,6 +34,9 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddScoped<IAssuntoRepository, AssuntoRepository>();
+builder.Services.AddScoped<IAutorRepository, AutorRepository>();
+builder.Services.AddScoped<ILivroRepository, LivroRepository>();
+builder.Services.AddScoped<IFormaPagRepository, FormaPagRepository>();
 
 var allowedInterfaceNamespaces = new List<string> { "UnitOfWork" };
 
@@ -60,11 +66,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseFastReport();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.UseCors("AllowAllOrigins");
-
 app.Run();

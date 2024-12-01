@@ -1,0 +1,13 @@
+<h1 class="h3 mb-4 text-gray-800">
+  {{ autorForm.get('codAs')?.value === 0 ? 'Adicionar Autor' : 'Editar Autor' }}
+</h1>
+
+<form [formGroup]="autorForm" (ngSubmit)="onSubmit()">
+  <input id="codAu" formControlName="codAu" type="hidden" />
+
+  <div class="form-group">
+    <label for="nome">Nome:</label>
+    <input id="nome" class="form-control form-control-user" formControlName="nome" type="text" />
+  </div>
+  <button class="btn btn-primary mt-4" type="submit">Gravar</button>
+</form>

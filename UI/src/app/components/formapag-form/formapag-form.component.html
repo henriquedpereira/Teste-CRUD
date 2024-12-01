@@ -1,0 +1,13 @@
+<h1 class="h3 mb-4 text-gray-800">
+  {{ formapagForm.get('codForm')?.value === 0 ? 'Adicionar Forma de Pagamento' : 'Editar Forma de Pagamento' }}
+</h1>
+
+<form [formGroup]="formapagForm" (ngSubmit)="onSubmit()">
+  <input id="codForm" formControlName="codForm" type="hidden" />
+
+  <div class="form-group">
+    <label for="descricao">Descrição:</label>
+    <input id="descricao" class="form-control form-control-user" formControlName="descricao" type="text" />
+  </div>
+  <button class="btn btn-primary mt-4" type="submit">Gravar</button>
+</form>

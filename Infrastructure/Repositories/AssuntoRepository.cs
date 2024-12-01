@@ -18,7 +18,7 @@ namespace Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Assunto> Busca(decimal id)
+        public async Task<Assunto> BuscaAsync(decimal id)
         {
             var customQuery = "Select * from Assunto where CodAs = @codAs";
             var parameters = new { codAs = id };
@@ -26,21 +26,28 @@ namespace Infrastructure.Repositories
             return result;
         }
 
-        public async Task Criar(Assunto item)
+        public async Task CriarAsync(Assunto item)
         {
             var query = "INSERT INTO Assunto (Descricao) VALUES (@Descricao);";
             var parameters = new { Descricao = item.Descricao };
             await _context.UnitOfWork.Connection.ExecuteAsync(query, parameters, _context.UnitOfWork.Transaction);
         }
 
-        public async Task Atualizar(Assunto item)
+        public async Task AtualizarAsync(Assunto item)
         {
             var query = "UPDATE Assunto SET Descricao = @Descricao WHERE CodAs = @CodAs";
             var parameters = new { Descricao = item.Descricao, CodAs = item.CodAs };
             await _context.UnitOfWork.Connection.ExecuteAsync(query, parameters, _context.UnitOfWork.Transaction);
         }
 
-        public async Task<IEnumerable<Assunto>> ListarTodos()
+        public async Task RemoverAsync(decimal id)
+        {
+            var query = "DELETE FROM Assunto WHERE CodAs = @CodAs";
+            var parameters = new { CodAs = id };
+            await _context.UnitOfWork.Connection.ExecuteAsync(query, parameters, _context.UnitOfWork.Transaction);
+        }
+
+        public async Task<IEnumerable<Assunto>> ListarTodosAsync()
         {
             var query = "SELECT * FROM Assunto";
             return await _context.UnitOfWork.Connection.QueryAsync<Assunto>(query, transaction: _context.UnitOfWork.Transaction);

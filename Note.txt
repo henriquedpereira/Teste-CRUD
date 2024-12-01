@@ -1,29 +1,41 @@
 FluentValidation
 validar os modelos 
 
+--CRIAR COMPONENTS ANGULAR --------------------------------------------  
+ng generate component components/assunto-list --standalone
+ng generate component components/assunto-form --standalone
+ng generate service services/assunto
 
---Criar component
-ng generate component components/assunto-list
+ng generate component components/autor-list --standalone
+ng generate component components/autor-form --standalone
+ng generate service services/autor
 
+ng generate component components/formapag-list --standalone
+ng generate component components/formapag-form --standalone
+ng generate service services/formapag
 
+ng generate component components/livro-list --standalone
+ng generate component components/livro-form --standalone
+ng generate service services/livro
+--CRIAR BASE DE DADOS --------------------------------------------  
    
---Criar base de dados   
+--CRIAR BASE DE DADOS --------------------------------------------   
 sqllocaldb create "Teste"
 
 (localdb)\Teste
-
+--CRIAR BASE DE DADOS --------------------------------------------  
 
 --CRIACAO DAS TABELAS --------------------------------------------
 
 CREATE TABLE Autor (
-    CodAu INT NOT NULL,
+    CodAu INT IDENTITY(1,1) NOT NULL,
     Nome NVARCHAR(40)
 );
 
 ALTER TABLE Autor ADD CONSTRAINT Autor_PK PRIMARY KEY (CodAu);
 
 CREATE TABLE Livro (
-    CodL INT NOT NULL,
+    CodL INT IDENTITY(1,1) NOT NULL,
     Titulo NVARCHAR(40),
     Editora NVARCHAR(40),
     Edicao INT NOT NULL,
@@ -33,14 +45,14 @@ CREATE TABLE Livro (
 ALTER TABLE Livro ADD CONSTRAINT Livro_PK PRIMARY KEY (CodL);
 
 CREATE TABLE Assunto (
-    CodAs INT NOT NULL,
+    CodAs INT IDENTITY(1,1) NOT NULL,
     Descricao NVARCHAR(20)
 );
 
 ALTER TABLE Assunto ADD CONSTRAINT Assunto_PK PRIMARY KEY (CodAs);
 
 CREATE TABLE FormaPag (
-    CodForm INT NOT NULL,
+    CodForm INT IDENTITY(1,1) NOT NULL,
     Descricao NVARCHAR(20)
 );
 
@@ -87,3 +99,4 @@ ALTER TABLE LivroAssunto
         REFERENCES Livro (CodL);
 		
 --CRIACAO DAS TABELAS --------------------------------------------
+

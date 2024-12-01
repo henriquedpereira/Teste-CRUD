@@ -1,6 +1,6 @@
 <h1 class="h3 mb-4 text-gray-800">Assuntos</h1>
 
-<button (click)="openEditDialog(0)" class="btn btn-success mb-2">Novo Assunto</button>
+<button (click)="form(0)" class="btn btn-success mb-2">Novo Assunto</button>
 
 <table class="table table-bordered">
   <thead>
@@ -15,8 +15,8 @@
       <td>{{ assunto.codAs }}</td>
       <td>{{ assunto.descricao }}</td>
       <td>
-        <button (click)="openEditDialog(assunto.codAs)" class="btn btn-primary btn-sm mr-2">Editar</button>
-        <button (click)="deleteAssunto(assunto.codAs)" class="btn btn-danger btn-sm">Excluir</button>
+        <button (click)="form(assunto.codAs)" class="btn btn-primary btn-sm mr-2">Editar</button>
+        <button (click)="remover(assunto.codAs)" class="btn btn-danger btn-sm">Excluir</button>
       </td>
     </tr>
   </tbody>

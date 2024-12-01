@@ -1,0 +1,23 @@
+<div>
+  <button (click)="form(0)" class="btn btn-success mb-2">Novo Autor</button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let autor of autores">
+        <td>{{ autor.codAu }}</td>
+        <td>{{ autor.nome }}</td>
+        <td>
+          <button (click)="form(autor.codAu)" class="btn btn-primary btn-sm mr-2">Editar</button>
+          <button (click)="remover(autor.codAu)" class="btn btn-danger btn-sm">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

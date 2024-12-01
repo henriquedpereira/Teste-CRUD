@@ -1,0 +1,29 @@
+<div>
+  <button (click)="form(0)" class="btn btn-success mb-2 mr-2">Novo Livro</button>
+  <button (click)="downloadReport()" class="btn btn-primary btn-sm mb-2" >Baixar Relatório</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Título</th>
+        <th>Editora</th>
+        <th>Edição</th>
+        <th>Ano de Publicação</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{ livro.codL }}</td>
+        <td>{{ livro.titulo }}</td>
+        <td>{{ livro.editora }}</td>
+        <td>{{ livro.edicao }}</td>
+        <td>{{ livro.anoPublicacao }}</td>
+        <td>
+          <button (click)="form(livro.codL)" class="btn btn-primary btn-sm mr-2">Editar</button>
+          <button (click)="remover(livro.codL)" class="btn btn-danger btn-sm">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
